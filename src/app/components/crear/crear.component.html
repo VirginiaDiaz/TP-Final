@@ -1,0 +1,49 @@
+
+<nav class="navbar mt-4">
+    <form class="container-fluid justify-content-start">
+    <a routerLink="/mostrar"><button class="btn btn-outline-light me-2" type="button">HOME</button></a> 
+    <a routerLink="/crear"><button class="btn btn-outline-light me-2" type="button">CREAR NUEVO</button></a>
+    </form>
+</nav>
+
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <div class="mb-3 mt-4 text-left">
+        <label class="form-label" >Nombre</label>
+        <input formControlName="nombre" type="text" class="form-control" placeholder="Campo requerido" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Apellido</label>
+        <input formControlName="apellido" type="text" class="form-control" placeholder="Campo requerido" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">DNI</label>
+        <input formControlName="dni" type="number" class="form-control" placeholder="Campo requerido" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Fecha de nacimiento</label>
+        <input formControlName="fnacimiento" type="date" class="form-control" placeholder="Campo requerido" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Dirección</label>
+        <input formControlName="direccion" type="text" class="form-control" placeholder="Campo requerido" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Telefono</label>
+        <input formControlName="telefono" type="number" class="form-control" placeholder="Campo requerido" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">E-mail</label>
+        <input formControlName="email" type="email" class="form-control" placeholder="ejemplo@gmail.com" required>
+    </div>
+
+    <button [disabled]="!postForm.valid" type="submit" class="btn btn-primary mb-4">GUARDAR</button>
+    
+</form>
+

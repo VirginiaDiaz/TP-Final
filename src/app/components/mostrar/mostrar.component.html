@@ -1,0 +1,41 @@
+<nav class="navbar mt-4">
+    <form class="container-fluid justify-content-start">
+        <a routerLink="/mostrar"><button class="btn btn-outline-light me-2" type="button">HOME</button></a> 
+        <a routerLink="/crear"><button class="btn btn-outline-light me-2" type="button">CREAR NUEVO</button></a>
+    </form>
+</nav>
+
+
+
+<br>
+<table class="table table-hover table-striped mt-4">
+    <thead class="bg-gradient text-white">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>DNI</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>E-mail</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of Posts">
+            <td>{{post.nombre}}
+            <td>{{ post.apellido}}</td>
+            <td>{{ post.dni|mostrarMiles}}</td>
+            <td>{{ post.fnacimiento}}</td>
+            <td>{{ post.telefono}}</td>
+            <td>{{ post.direccion}}</td>
+            <td>{{ post.email}}</td>
+            <td>
+                <button  routerLink="/editar/{{post.id}}" class="btn btn-outline-success"><i class="fa-regular fa-pen-to-square"></i></button>
+                <button  (click)="deleteRecord(post)" class="btn btn-outline-danger"><i class="fa-solid fa-user-slash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
